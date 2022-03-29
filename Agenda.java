@@ -1,8 +1,8 @@
 
 public class Agenda {
-        private String mail;
-        private String nombre;
-        private String numero;
+        public String mail;
+        public String nombre;
+        public String numero;
         public Agenda(String mail, String nombre, String numero) {
             this.mail = mail;
             this.nombre = nombre;
