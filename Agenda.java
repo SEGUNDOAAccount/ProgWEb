@@ -3,7 +3,7 @@ public class Agenda {
         public String mail;
         public String nombre;
         public String numero;
-        public Agenda(String mail, String nombre, String numero) {
+        public Agenda(String mail, String nombre, String numero) { // bien el constructor!
             this.mail = mail;
             this.nombre = nombre;
             this.numero = numero;
@@ -25,6 +25,12 @@ public class Agenda {
         }
         public void setNumero(String numero) {
             this.numero = numero;
+        }
+
+        // esto es cuando haces un print(contacto) va a llamar e esta funcion implicitamente
+        @Override
+        public String toString() {
+            return "Contacto { nombre=" + nombre + ", numero=" + numero + ", mail=" + mail + '}';
         }
         
 }

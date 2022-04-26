@@ -6,8 +6,8 @@ public class Main {
         String input;
         Scanner entrada = new Scanner(System.in);
         ArrayList<Agenda> contacto = new ArrayList<Agenda>();
-        do {
-            System.out.println("Agenda de Nicolas V1");
+        System.out.println("Agenda de Nicolas V1");
+        do { // muy bien!
             System.out.println("Quieres ingresar [I] ingresar un nuevo contacto [C] consultar un contacto existente o para salir [S]?");
             input = entrada.next();
             switch (input.toLowerCase()) {
@@ -16,16 +16,13 @@ public class Main {
                     String nombre = entrada.next();
                     System.out.println("Ingrese su numero");
                     String numero = entrada.next();
-                    boolean abs = false;
+                    boolean abs = false; // que es abs?
                     do {
                         System.out.println("Ingrese su mail(o presione enter si no tiene)");
                         String mail = entrada.nextLine();
-                        entrada.nextLine();
-                        if (mail.equals("")) {
-                            contacto.add(new Agenda(mail,nombre, numero ));
-                            System.out.println("Contacto ingresado");
-                            abs = true;
-                        } else if (mail.contains("@")) {
+                        entrada.nextLine(); // y esta linea??
+                        // se puede hacer mas corto.
+                        if (mail.equals("") || mail.contains("@")) {
                             contacto.add(new Agenda(mail,nombre, numero ));
                             System.out.println("Contacto ingresado");
                             abs = true;
@@ -39,9 +36,7 @@ public class Main {
                     String nombre2 = entrada.next();
                     for (int i = 0; i < contacto.size(); i++) {
                         if (contacto.get(i).getNombre().equals(nombre2)) {
-                            System.out.println("Nombre: " + contacto.get(i).getNombre());
-                            System.out.println("Numero: " + contacto.get(i).getNumero());
-                            System.out.println("Mail: " + contacto.get(i).getMail());
+                            System.out.println(contacto.get(i)); // queda mas facil :)
                         }
                     }
                     break;
